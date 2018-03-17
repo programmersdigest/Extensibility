@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
+    <RootNamespace>programmersdigest.Extensibility</RootNamespace>
+    <Version>0.2.0</Version>
+    <Authors>Michael Sperber (programmersidgest.de)</Authors>
+    <Company>programmersdigest.de</Company>
+    <Description>A simple plugin system with lazy loading of plugin assemblies. Currently limited to .NET framework because of the use of AppDomains for probing of plugin assemblies.</Description>
+    <Copyright>Copyright © Michael Sperber (programmersdigest.de) 2018</Copyright>
+    <PackageTags>Plugin System Extensibility</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>programmersdigest.Extensibility</AssemblyName>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>github</RepositoryType>
+    <RepositoryUrl>https://github.com/programmersdigest/Extensibility</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/programmersdigest/Extensibility</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/programmersdigest/Extensibility/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/programmersdigest/Extensibility/master/Resources/Icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="programmersdigest.Util" Version="0.2.4" />
+  </ItemGroup>
+</Project>
