@@ -12,7 +12,7 @@
    height="128"
    viewBox="0 0 128 128"
    id="svg4"
-   sodipodi:docname="Icon.svg"
+   sodipodi:docname="Template.svg"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <metadata
      id="metadata10">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,20 +37,28 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="3840"
-     inkscape:window-height="2035"
+     inkscape:window-width="2610"
+     inkscape:window-height="1449"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="6.9532167"
-     inkscape:cx="74.649402"
-     inkscape:cy="69.33866"
-     inkscape:window-x="-13"
-     inkscape:window-y="-13"
-     inkscape:window-maximized="1"
+     inkscape:zoom="7.9999999"
+     inkscape:cx="75.618855"
+     inkscape:cy="78.810189"
+     inkscape:window-x="803"
+     inkscape:window-y="426"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg4" />
+  <rect
+     style="opacity:1;fill:#980e0e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:9.99999905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect812"
+     width="112"
+     height="112"
+     x="8"
+     y="8.0000019"
+     rx="8"
+     ry="8" />
   <path
-     d="M 95.999998,32.888864 V 8 H 79.999996 V 32.888864 H 48.000004 V 8 H 32.000002 v 24.888864 0 C 23.999999,32.888864 16,39.111136 16,45.333352 V 79.555568 L 44.000002,101.33335 V 120 H 84.000005 V 101.33335 L 112,79.555568 V 45.333352 c 0,-6.222216 -8,-12.444488 -16.000002,-12.444488 z"
-     id="path2"
-     inkscape:connector-curvature="0"
-     style="stroke-width:0.99999988;fill:#980e0e;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1;stroke-width:0.99999988"
+     d="M 40 20 L 40 44 L 24 44 L 24 60.666016 C 24 80.001887 42.79708 93.333984 52 93.333984 L 52 108 L 64 108 L 76 108 L 76 93.333984 C 85.20292 93.333984 104 80.001887 104 60.666016 L 104 44 L 88 44 L 88 20 L 76 20 L 76 44 L 64 44 L 52 44 L 52 20 L 40 20 z "
+     id="path2-8" />
 </svg>
