@@ -7,29 +7,14 @@ using System.Reflection;
 
 namespace programmersdigest.Extensibility {
     internal class PluginLoader {
-        private const string PluginsAppDomainName = "PluginsDomain";
-
         public Dictionary<string, List<string>> DiscoverPlugins(string searchPattern) {
-            // TODO NetCore does NOT implement AppDomains. Instead we are supposed to use AssemblyLoadContext, which
-            // in turn IS NOT PART OF netstandard 2.0 and NOT IMPLEMENTED in .NET 4.6.2.
-            // WTF???
+            var exeDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            var pluginAssemblyFiles = Directory.EnumerateFiles(exeDir, searchPattern, SearchOption.AllDirectories);
 
-            AppDomain appDomain = null;
-            try {
-                appDomain = AppDomain.CreateDomain(PluginsAppDomainName);
-                var exeDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                var pluginAssemblyFiles = Directory.EnumerateFiles(exeDir, searchPattern, SearchOption.AllDirectories);
-
-                return LoadPluginAssemblies(appDomain, pluginAssemblyFiles);
-            }
-            finally {
-                if (appDomain != null) {
-                    AppDomain.Unload(appDomain);
-                }
-            }
+            return LoadPluginAssemblies(pluginAssemblyFiles);
         }
 
-        private Dictionary<string, List<string>> LoadPluginAssemblies(AppDomain appDomain, IEnumerable<string> pluginAssemblyFiles) {
+        private Dictionary<string, List<string>> LoadPluginAssemblies(IEnumerable<string> pluginAssemblyFiles) {
             var cache = new Dictionary<string, List<string>>();
             var exceptions = new List<Exception>();
 
@@ -39,12 +24,11 @@ namespace programmersdigest.Extensibility {
                     // Yes, AppendPrivatePath is obsolete, but netstandard 2.0
                     // DOES NOT PROVIDE AN ALTERNATIVE! Thanks a bunch!
 #pragma warning disable CS0618
-                    appDomain.AppendPrivatePath(Path.GetDirectoryName(pluginAssemblyFile));
                     AppDomain.CurrentDomain.AppendPrivatePath(Path.GetDirectoryName(pluginAssemblyFile));
 #pragma warning restore CS0618
 
                     var name = AssemblyName.GetAssemblyName(pluginAssemblyFile);
-                    var assembly = appDomain.Load(name);
+                    var assembly = AppDomain.CurrentDomain.Load(name);
 
                     DiscoverPluginTypes(assembly, ref cache);
                 }
