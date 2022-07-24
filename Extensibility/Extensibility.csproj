@@ -2,11 +2,11 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
     <RootNamespace>programmersdigest.Extensibility</RootNamespace>
-    <Version>0.2.0</Version>
+    <Version>0.3</Version>
     <Authors>Michael Sperber (programmersidgest.de)</Authors>
     <Company>programmersdigest.de</Company>
-    <Description>A simple plugin system with lazy loading of plugin assemblies. Currently limited to .NET framework because of the use of AppDomains for probing of plugin assemblies.</Description>
-    <Copyright>Copyright © Michael Sperber (programmersdigest.de) 2018</Copyright>
+    <Description>A simple plugin system with lazy loading of plugin assemblies.</Description>
+    <Copyright>Copyright © Michael Sperber (programmersdigest.de) 2022</Copyright>
     <PackageTags>Plugin System Extensibility</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyName>programmersdigest.Extensibility</AssemblyName>
